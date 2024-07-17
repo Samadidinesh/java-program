@@ -1,0 +1,95 @@
+1.
+  interface Shape {
+    void draw(); // Interface method (does not have a body)
+    double getArea(); // Interface method (does not have a body)
+}
+
+class Circle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+
+    @Override
+    public double getArea() {
+        return Math.PI * Math.pow(5, 2); // Area of a circle with radius 5
+    }
+}
+
+class Rectangle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing Rectangle");
+    }
+
+    @Override
+    public double getArea() {
+        return 4 * 6; // Area of a rectangle with sides 4 and 6
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        circle.draw();
+        System.out.println("Area of Circle: " + circle.getArea());
+
+        Shape rectangle = new Rectangle();
+        rectangle.draw();
+        System.out.println("Area of Rectangle: " + rectangle.getArea());
+    }
+}
+
+2.
+  interface Interface1 {
+    void method1();
+}
+
+interface Interface2 {
+    void method2();
+}
+
+class MultiInterface implements Interface1, Interface2 {
+    public void method1() {
+        System.out.println("Method 1 implementation");
+    }
+
+    public void method2() {
+        System.out.println("Method 2 implementation");
+    }
+
+    public static void main(String[] args) {
+        MultiInterface obj = new MultiInterface();
+        obj.method1();
+        obj.method2();
+    }
+}
+
+
+3.
+interface Animal {
+    void eat();
+    void sleep();
+}
+
+
+class Dog implements Animal {
+    @Override
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Dog is sleeping");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.eat();
+        myDog.sleep();
+    }
+}
